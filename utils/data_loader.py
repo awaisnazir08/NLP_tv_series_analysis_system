@@ -3,8 +3,11 @@ import pandas as pd
 
 
 def load_subtitles_dataset(dataset_path):
-    # path = (dataset_path + '/*.ass')
-    subtitles_paths = glob(dataset_path)
+    checker = dataset_path.split('.')[-1]
+    if checker == 'ass':
+        subtitles_paths = [dataset_path]
+    else:
+        subtitles_paths = glob(dataset_path + '/*.ass')
     scripts = []
     episode_numbers = []
     for path in subtitles_paths:
