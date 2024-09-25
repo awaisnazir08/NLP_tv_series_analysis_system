@@ -49,7 +49,7 @@ class CharacterNetworkGenerator():
         node_degree = dict(G.degree)
         nx.set_node_attributes(G, node_degree, 'size')
         net.from_nx(G)
-        # net.show('Naruto_series.html')
+        net.show('Naruto_series.html')
         
         html = net.generate_html()
         html = html.replace("'", "\"")
