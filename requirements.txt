@@ -4,3 +4,4 @@ nltk==3.8.1
 gradio==4.36.1
 pyvis==0.3.2
 evaluate==0.4.2
+python-dotenv==1.0.1

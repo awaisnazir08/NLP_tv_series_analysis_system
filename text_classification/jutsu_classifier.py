@@ -11,7 +11,7 @@ from .training_utils import get_class_weights, compute_metrics
 from .custom_trainer import CustomTrainer
 
 class JutsuClassifier():
-    def __init__(self, model_path, data_path=None, text_column_name='text', label_column_name='jutsu', model_name='distilbert/distilbert-base-uncased', test_size=0.2, num_labels=3,huggingface_token = None):
+    def __init__(self, model_path, data_path=None, text_column_name='text', label_column_name='jutsu', model_name='distilbert/distilbert-base-uncased', test_size=0.2, num_labels=3, huggingface_token = None):
         self.model_path = model_path
         self.data_path = data_path
         self.text_column_name = text_column_name
@@ -50,7 +50,7 @@ class JutsuClassifier():
             output_dir=self.model_path,
             learning_rate=2e-4,
             per_device_train_batch_size=8,
-            per_device_test_batch_size=8,
+            per_device_eval_batch_size=8,
             num_train_epochs=5,
             weight_decay=0.01,
             evaluation_strategy='epoch',
@@ -62,7 +62,7 @@ class JutsuClassifier():
             model = model,
             args = training_args,
             data_collator = data_collator, 
-            training_dataset = train_data,
+            train_dataset = train_data,
             eval_dataset = test_data,
             tokenizer = self.tokenizer,
             compute_metrics = compute_metrics
