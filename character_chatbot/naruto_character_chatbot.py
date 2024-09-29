@@ -16,7 +16,7 @@ from trl import SFTConfig, SFTTrainer
 class CharacterChatBot():
     def __init__(self, 
                 model_path,
-                data_path = 'content/data/naruto.csv',
+                data_path = '/content/data/naruto.csv',
                 huggingface_token = None
                 ):
         self.model_path = model_path
@@ -118,7 +118,7 @@ class CharacterChatBot():
             report_to = "none"
         )
         
-        max_seq_len = 512
+        max_seq_length = 512
         
         trainer = SFTTrainer(
             model = model,
@@ -128,7 +128,7 @@ class CharacterChatBot():
             dataset_text_field = 'prompt', 
             arg = training_arguments,
             training_arguments = training_arguments, 
-            max_seq_len = max_seq_len
+            max_seq_length = max_seq_length
             )
         
         trainer.train()
@@ -162,7 +162,7 @@ class CharacterChatBot():
         messages = []
         
         #Add the system prompt
-        messages.append(""" You are Naruto from the anime "Naruto". Your responses should reflect his personality and speech patterns \n""")
+        messages.append({"role": "system", "content": """ You are Naruto from the anime "Naruto". Your responses should reflect his personality and speech patterns \n"""})
         
         for message_and_response in history:
             messages.append({'role': "user", "content": message_and_response[0]})
