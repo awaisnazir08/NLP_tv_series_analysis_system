@@ -8,3 +8,6 @@ datasets
 evaluate
 python-dotenv==1.0.1
 scikit-learn==1.3.2
+git+https://github.com/huggingface/peft.git
+trl==0.9.6
+bitsandbytes==0.43.3
