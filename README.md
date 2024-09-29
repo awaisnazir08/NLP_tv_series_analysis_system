@@ -1,6 +1,6 @@
 # Analyze Your Favorite Series with NLP
 
-In this project, I analyzed a series using **Natural Language Processing (NLP)** and **Large Language Models (LLMs)**. I scraped my own dataset, used **zero-shot classifiers**, built my own **LLM text classifier**, applied **Named Entity Recognition (NER)** to build a **character network**, and created a **character chatbot** to chat with your favorite characters. Finally, I integrated everything into a web GUI using **Gradio**. This comprehensive NLP project boosted my CV and provided me with highly sought-after NLP skills.
+In this project, I analyzed the Naruto series using **Natural Language Processing (NLP)** and **Large Language Models (LLMs)**. I scraped my own dataset, used **zero-shot classifiers**, built my own **LLM text classifier**, applied **Named Entity Recognition (NER)** to build a **character network**, and created a **character chatbot** to chat with your favorite characters. Finally, I integrated everything into a web GUI using **Gradio**. This comprehensive NLP project boosted my CV and provided me with highly sought-after NLP skills.
 
 ## Overview
 
