@@ -13,7 +13,7 @@ from transformers import (
 from peft import LoraConfig, PeftModel
 from trl import SFTConfig, SFTTrainer
 
-class CharacterChatbot():
+class CharacterChatBot():
     def __init__(self, 
                 model_path,
                 data_path = 'content/data/naruto.csv',

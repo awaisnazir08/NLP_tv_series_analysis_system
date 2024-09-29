@@ -3,7 +3,7 @@ from .theme_classifier.theme_classifier import ThemeClassifier
 from .character_network.named_entity_recognizer import NamedEntityRecognizer
 from .character_network.character_network_generator import CharacterNetworkGenerator
 from .text_classification.jutsu_classifier import JutsuClassifier
-from .character_chatbot.naruto_character_chatbot import CharacterChatbot
+from .character_chatbot.naruto_character_chatbot import CharacterChatBot
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -48,7 +48,7 @@ def classify_text(text_classification_model, text_classification_data_path, text
     return output
 
 def chat_with_character_chatbot(message, history):
-    character_chatbot = CharacterChatbot("Awais1718/Naruto_Llama-3-8B",
+    character_chatbot = CharacterChatBot("Awais1718/Naruto_Llama-3-8B",
                                         huggingface_token=os.getenv('huggingface_token')
                                         )
     output = character_chatbot.chat(message, history)
