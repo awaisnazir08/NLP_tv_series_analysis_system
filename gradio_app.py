@@ -3,6 +3,7 @@ from .theme_classifier.theme_classifier import ThemeClassifier
 from .character_network.named_entity_recognizer import NamedEntityRecognizer
 from .character_network.character_network_generator import CharacterNetworkGenerator
 from .text_classification.jutsu_classifier import JutsuClassifier
+from .character_chatbot.naruto_character_chatbot import CharacterChatbot
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -45,6 +46,13 @@ def classify_text(text_classification_model, text_classification_data_path, text
     output = output[0]
     
     return output
+
+def chat_with_character_chatbot(message, history):
+    character_chatbot = CharacterChatbot("Awais1718/Naruto_Llama-3-8B",
+                                        huggingface_token=os.getenv('huggingface_token')
+                                        )
+    output = character_chatbot.chat(message, history)
+    output = output['content'].strip()
 
 def main():
     with gr.Blocks() as iface:
@@ -89,6 +97,12 @@ def main():
                         text_to_classify = gr.Textbox(label='Text input')
                         classify_text_button = gr.Button('Classify text (Jutsu)')
                         classify_text_button.click(classify_text, inputs=[text_classification_model, text_classification_data_path, text_to_classify], outputs = [text_classification_output])
+        
+        # Character chatbot section
+        with gr.Row():
+            with gr.Column():
+                gr.HTML("<h1>Character Chatbot based on Naruto</h1>")
+                gr.ChatInterface(chat_with_character_chatbot)
     
     iface.launch(share=True)
 
