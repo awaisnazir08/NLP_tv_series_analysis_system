@@ -1,21 +1,44 @@
-# Analyze your favourite Series with NLP
-In this project, I analyzed a series using NLP and LLMs. I scraped my own dataset, used zero-shot classifiers, built my own LLM text classifier, used NER to build a character network, and created a character chatbot to chat with your favorite characters. In the end, I integrated everything into a web GUI using Gradio. This NLP project elevated my CV to another level, and I gained numerous NLP skills that are highly sought after in the market.
+# Analyze Your Favorite Series with NLP
+
+In this project, I analyzed a series using **Natural Language Processing (NLP)** and **Large Language Models (LLMs)**. I scraped my own dataset, used **zero-shot classifiers**, built my own **LLM text classifier**, applied **Named Entity Recognition (NER)** to build a **character network**, and created a **character chatbot** to chat with your favorite characters. Finally, I integrated everything into a web GUI using **Gradio**. This comprehensive NLP project boosted my CV and provided me with highly sought-after NLP skills.
 
 ## Overview
-In this project, I created 5 models, each containing the code for a different part of the project:
-      
-**crawler**: This folder contains the code for web scraping the internet to build a comprehensive dataset about the anime using Scrapy.
 
-**character_network**: This folder contains the code for creating an intricate character network using Spacy's NER model, NetworkX, and PyViz.
+This project is divided into five key components, each handled by a separate model. Here’s an overview of each part:
 
-**text_classifier**: This folder contains the code for training a text classifier that can classify text into multiple classes.
+### 1. Crawler
 
-**theme_classifier**: This folder contains the code for extracting the main themes of the series using Zero-shot classifiers.
+The `crawler` folder contains code for **web scraping** the internet to build a comprehensive dataset about the anime series using **Scrapy**. This dataset forms the foundation for the rest of the analyses.
 
-**charater_chat_bot**: This folder contains the code for building a charatcer chatbot with LLMs to chat with your favorite charaters from the series. 
+### 2. Character Network
 
+Using **Spacy's NER model**, **NetworkX**, and **PyViz**, I created an intricate **character network** to map relationships between characters in the series.
+
+![Character Network](demo/character_network.png)
+
+### 3. Text Classifier
+
+The `text_classifier` folder contains code for training a **text classifier** that categorizes text into multiple classes, giving insights into different dialogues or narrative themes of the anime.
+
+![Text Classification with LLMs](demo/text_classification_with_llms.png)
+
+### 4. Theme Classifier
+
+The `theme_classifier` folder contains code for extracting the main themes of the series using **Zero-shot classifiers**. This allows theme extraction without needing a pre-trained theme classification model.
+
+![Zero-shot Theme Classifier](demo/zero_shot_theme_classifier.png)
+
+### 5. Character Chatbot
+
+The `character_chat_bot` folder contains code for building a character chatbot using **LLMs**, allowing users to chat with their favorite characters. For example, I built a **Naruto Character Chatbot** to interact with characters from the series *Naruto*.
+
+![Naruto Character Chatbot](demo/naruto_chatbot.png)
 
 ## Requirements
-Before running the code in this project, make sure you have installed all packages in the requirements.txt by running
 
-```pip install -r requirements.txt```
+Before running the code in this project, make sure you have installed all the necessary packages. To do this, run:
+
+```bash
+pip install -r requirements.txt 
+```
+
