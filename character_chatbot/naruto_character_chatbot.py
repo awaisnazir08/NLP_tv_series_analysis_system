@@ -126,7 +126,7 @@ class CharacterChatBot():
             tokenizer = tokenizer,
             peft_config = peft_config,
             dataset_text_field = 'prompt', 
-            arg = training_arguments,
+            args = training_arguments,
             training_arguments = training_arguments, 
             max_seq_length = max_seq_length
             )
